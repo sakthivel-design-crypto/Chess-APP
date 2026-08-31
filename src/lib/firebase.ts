@@ -96,16 +96,4 @@ export function handleFirestoreError(error: unknown, operationType: OperationTyp
   throw new Error(JSON.stringify(errInfo));
 }
 
-// Validate connection to Firestore on initialization
-async function testFirestoreConnection() {
-  try {
-    await getDocFromServer(doc(db, "test", "connection"));
-    console.log("Firestore cloud connection verified.");
-  } catch (error) {
-    if (error instanceof Error && error.message.includes("the client is offline")) {
-      console.error("Firestore offline: Please verify network and Firebase config.");
-    }
-  }
-}
 
-testFirestoreConnection();

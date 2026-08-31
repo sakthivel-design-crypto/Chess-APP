@@ -38,7 +38,7 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete }) => {
       if (!ctx) return;
 
       if (ctx.state === "suspended") {
-        ctx.resume();
+        ctx.resume().catch(() => {});
       }
 
       const now = ctx.currentTime;

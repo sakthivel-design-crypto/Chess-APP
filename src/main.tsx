@@ -6,10 +6,9 @@ import './index.css';
 
 // Global error handler to catch cross-origin script errors and unhandled promise rejections safely
 if (typeof window !== 'undefined') {
-  window.onerror = (message, source, lineno, colno, error) => {
+  window.onerror = (message, source) => {
     const msgStr = String(message || '');
     if (msgStr === 'Script error.' || msgStr.includes('Script error') || !source) {
-      console.warn('Cross-origin script event intercepted safely:', message);
       return true;
     }
     return false;
@@ -20,7 +19,6 @@ if (typeof window !== 'undefined') {
     (event) => {
       const msg = event?.message || '';
       if (msg === 'Script error.' || !msg || msg.includes('Script error')) {
-        console.warn('Cross-origin script event intercepted safely:', event);
         event.preventDefault();
         event.stopPropagation();
         return true;
@@ -40,7 +38,6 @@ if (typeof window !== 'undefined') {
       msg.includes('websocket') ||
       msg.includes('Script error')
     ) {
-      console.log('Ignored benign unhandled rejection:', msg);
       event.preventDefault();
       event.stopPropagation();
     }

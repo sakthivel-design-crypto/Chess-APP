@@ -107,16 +107,16 @@ export const RAW_PUZZLE_DATABASE: ChessPuzzle[] = [
   },
   {
     puzzleId: "puz_006",
-    fen: "6rk/5p1p/8/8/8/8/5N2/6QK w - - 0 1",
+    fen: "5r1k/6pp/7N/8/2Q5/8/8/6K1 w - - 0 1",
     sideToMove: "white",
-    solutionMoves: ["g1g8", "g8g8", "f2f7"],
+    solutionMoves: ["c4g8", "f8g8", "h6f7"],
     puzzleRating: 1050,
     difficulty: "Intermediate",
     theme: "Smothered Mate",
     title: "Classical Smothered Mate",
     description: "Sacrifice your Queen to trap the Black King behind his own rook.",
     hintIdea: "Look for a queen sacrifice on g8.",
-    hintPieceSquare: "g1",
+    hintPieceSquare: "c4",
     explanationSteps: [
       "Qg8+ forces Rxg8 because the king has no escape.",
       "Nf7# delivers checkmate as the king is smothered by his own pieces."
@@ -207,19 +207,19 @@ export const RAW_PUZZLE_DATABASE: ChessPuzzle[] = [
   },
   {
     puzzleId: "puz_012",
-    fen: "8/8/8/3p4/3P4/4K3/8/4k3 w - - 0 1",
+    fen: "8/4k3/3p4/8/3P4/4K3/8/8 w - - 0 1",
     sideToMove: "white",
-    solutionMoves: ["e3e4", "e1e2", "e4d5"],
+    solutionMoves: ["e3e4", "e7e6", "d4d5"],
     puzzleRating: 1320,
     difficulty: "Advanced",
     theme: "Endgame",
-    title: "King Centralization & Pawn Win",
-    description: "Use your king to attack Black's weak pawn on d5 in the endgame.",
+    title: "King Centralization & Pawn Push",
+    description: "Centralize your king and push the d-pawn to seize crucial space in the endgame.",
     hintIdea: "March your king to e4.",
     hintPieceSquare: "e3",
     explanationSteps: [
-      "Ke4 threatens the d5 pawn directly.",
-      "After Black plays Ke2, Qxd5 captures the pawn and creates a winning passed pawn."
+      "Ke4 centralizes the King into an active forward post.",
+      "After Black responds Ke6, d5+ gains space and drives Black's king backward."
     ]
   },
   {
